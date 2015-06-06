@@ -1,8 +1,10 @@
 main {
 	display: flex;
-	min-height: 100%;
-	background-image: linear-gradient(to bottom, #FEB508 10%, #FFAC33 45%);
-	color: $black;
+	color: #FFFFFF;
+	background-image: url("../images/soccer-stadium-.jpg");
+	background-position: 50%;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 .channel {
 	width: 50%;
@@ -11,14 +13,14 @@ main {
 		border-left: 3px dashed rgba(255, 255, 255, 0.19);
 	}
 	&__logo {
-		height: 130px;
+		height: 90px;
 		padding: $general-padding 2rem;
 		display: flex;
+		background: rgba(0, 0, 0, 0.1);
 	}
 	&__img {
-		height: 100px;
-		width: 100px;
-		padding: 1rem;
+		height: 100%;
+		padding: $general-padding/2;
 		background: #fff;
 		border-radius: 30%;
 		box-shadow: $channels-image-box-shadow;

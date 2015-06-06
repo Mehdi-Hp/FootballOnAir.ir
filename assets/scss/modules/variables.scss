@@ -9,7 +9,7 @@ $text-shadow-to-bottom--small: 0px 2px 1px rgba(0,0,0,0.2);
 $box-shadow-to-top--big: 0px -5px 1px 0px rgba(0,0,0,0.2);
 $box-shadow-to-bottom--big: 0px 5px 1px 0px rgba(0,0,0,0.2);
 $box-shadow-to-top--small: 0px -2px 1px 0px rgba(0,0,0,0.2);
-$box-shadow-to-bottom--small: 0px 2px 1px 0px rgba(0,0,0,0.2);
+$box-shadow-to-bottom--small: 0px 3px 3px 1px rgba(0,0,0,0.15);
 
 // Colors
 $black: hsl(0, 0%, 15%);
@@ -20,7 +20,15 @@ $black-light-2: lighten($black, 20%);
 $three-color: #FFAC33;
 $varzesh-color: #FEB508;
 
+$shamrock-green: hsl(154, 100%, 30%);
+$purple: hsl(271, 27%, 50%);
+$yellow: hsl(48, 89%, 55%);
+
 
 // Components
 $channels-image-box-shadow: $box-shadow-to-top--big;
 $channels-text-box-shadow: $text-shadow-to-top--big;
+
+// Typography
+$font-family-first: IranSans;
+$font-family-second: Iran;

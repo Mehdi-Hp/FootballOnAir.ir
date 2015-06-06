@@ -203,8 +203,7 @@ var showGames = function() {
          gameDOM = '\
             <section class="game" id="game">\
                <section class="game__details">\
-                     <p class="game__day">' + gamesParsed.days[i] + '</p>\
-                     <p class="game__date">' + gamesParsed.dates[i] + '</p>\
+                     <p class="game__day">' + gamesParsed.days[i] + '<br>' + gamesParsed.dates[i] + '</p>\
                      <p class="game__time">' + gamesParsed.times[i] + '</p>\
                      <p class="game__series">' + gamesParsed.series[i] + '</p>\
                </section>\
