@@ -42,7 +42,7 @@ var gameManipulate = function() {
             $(this).remove();
          }
       });
-      games = $(".data p");
+      games = $(".data > p");
 
 
       // gameParsing Functions
@@ -50,73 +50,120 @@ var gameManipulate = function() {
           word = "",
           restText = "";
 
-      var getWord = function(arrayToPush) {
-         switch (arrayToPush) {
-            case "times":
-               text = $(this)[0].textContent;
-               word = text.substr(0, text.indexOf(" "));
-               word = word.substr(0, 5);
-               times.push($.trim(word));
-               $(this)[0].textContent = $(this)[0].textContent.slice(5);
-               break;
-            case "series":
-               text = $(this).html();
-               word = text.slice(0, text.indexOf(':'));
-               series.push($.trim(word));
-               $(this)[0].textContent = text.slice(text.indexOf(':'));
-               break;
-            case "homes":
-               text = $(this).html();
-               word = text.slice(0, text.indexOf("-"));
-               homes.push($.trim(word));
-               break;
-            case "aways":
-               text = $(this).html();
-               word = text.slice(0, text.indexOf("زنده"));
-               aways.push($.trim(word));
-               $(this)[0].textContent = $(this)[0].textContent.slice($(this)[0].textContent.indexOf("زنده"));
-               text = $(this).html();
-               break;
-            case "channels":
-               text = $(this).html();
-               word = text;
-               channels.push($.trim(word));
-               break;
-            default:
-               text = $(this).html();
-               word = text.substr(0, text.indexOf(" "));
-               arrayToPush.push($.trim(word));
-               restText = text.substr(text.indexOf(" "));
-               $(this)[0].textContent = $.trim(restText);
-               break;
-         }
-      }
-
-      var removeWord = function() {
-         text = $(this).html();
-         restText = text.substr(text.indexOf(" "));
-         $(this)[0].textContent = $.trim(restText);
-      }
+      // var getWord = function(arrayToPush) {
+      //    switch (arrayToPush) {
+      //       case "times":
+      //          text = $(this)[0].textContent;
+      //          word = text.substr(0, text.indexOf(" "));
+      //          word = word.substr(0, 5);
+      //          times.push($.trim(word));
+      //          $(this)[0].textContent = $(this)[0].textContent.slice(5);
+      //          break;
+      //       case "series":
+      //          text = $(this).html();
+      //          word = text.slice(0, text.indexOf(':'));
+      //          series.push($.trim(word));
+      //          $(this)[0].textContent = text.slice(text.indexOf(':'));
+      //          break;
+      //       case "homes":
+      //          text = $(this).html();
+      //          word = text.slice(0, text.indexOf("-"));
+      //          homes.push($.trim(word));
+      //          break;
+      //       case "aways":
+      //          text = $(this).html();
+      //          word = text.slice(0, text.indexOf("زنده"));
+      //          aways.push($.trim(word));
+      //          $(this)[0].textContent = $(this)[0].textContent.slice($(this)[0].textContent.indexOf("زنده"));
+      //          text = $(this).html();
+      //          break;
+      //       case "channels":
+      //          text = $(this).html();
+      //          word = text;
+      //          channels.push($.trim(word));
+      //          break;
+      //       default:
+      //          text = $(this).html();
+      //          word = text.substr(0, text.indexOf(" "));
+      //          arrayToPush.push($.trim(word));
+      //          restText = text.substr(text.indexOf(" "));
+      //          $(this)[0].textContent = $.trim(restText);
+      //          break;
+      //    }
+      // }
+      //
+      // var removeWord = function() {
+      //    text = $(this).html();
+      //    restText = text.substr(text.indexOf(" "));
+      //    $(this)[0].textContent = $.trim(restText);
+      // }
 
       // Parse games information
       $.each(games, function (key, value) {
-         // Days
-         getWord("days");
+         text = $(this).html();
+         word = text.substr(0, text.indexOf(" "));
+         days.push($.trim(word));
+         restText = text.substr(text.indexOf(" "));
+         $(this)[0].textContent = $.trim(restText);
 
-         //Dates
-         getWord("dates");
-         removeWord();
-         removeWord();
-         getWord("times");
-         getWord("series");
-         removeWord();
-         getWord("homes");
-         removeWord();
-         getWord("aways");
-         removeWord();
-         removeWord();
-         removeWord();
-         getWord("channels");
+         text = $(this).html();
+         word = text.substr(0, text.indexOf(" "));
+         dates.push($.trim(word));
+         restText = text.substr(text.indexOf(" "));
+         $(this)[0].textContent = $.trim(restText);
+
+         text = $(this).html();
+         restText = text.substr(text.indexOf(" "));
+         $(this)[0].textContent = $.trim(restText);
+         text = $(this).html();
+         restText = text.substr(text.indexOf(" "));
+         $(this)[0].textContent = $.trim(restText);
+
+         text = $(this)[0].textContent;
+         word = text.substr(0, text.indexOf(" "));
+         word = word.substr(0, 5);
+         times.push($.trim(word));
+         $(this)[0].textContent = $(this)[0].textContent.slice(5);
+
+         text = $(this).html();
+         word = text.slice(0, text.indexOf(':'));
+         series.push($.trim(word));
+         $(this)[0].textContent = text.slice(text.indexOf(':'));
+
+         text = $(this).html();
+         restText = text.substr(text.indexOf(" "));
+         $(this)[0].textContent = $.trim(restText);
+
+         text = $(this).html();
+         word = text.slice(0, text.indexOf("-"));
+         homes.push($.trim(word));
+
+         text = $(this).html();
+         restText = text.substr(text.indexOf(" "));
+         $(this)[0].textContent = $.trim(restText);
+         text = $(this).html();
+         restText = text.substr(text.indexOf(" "));
+         $(this)[0].textContent = $.trim(restText);
+
+         text = $(this).html();
+         word = text.slice(0, text.indexOf("زنده"));
+         aways.push($.trim(word));
+         $(this)[0].textContent = $(this)[0].textContent.slice($(this)[0].textContent.indexOf("زنده"));
+         text = $(this).html();
+
+         text = $(this).html();
+         restText = text.substr(text.indexOf(" "));
+         $(this)[0].textContent = $.trim(restText);
+         text = $(this).html();
+         restText = text.substr(text.indexOf(" "));
+         $(this)[0].textContent = $.trim(restText);
+         text = $(this).html();
+         restText = text.substr(text.indexOf(" "));
+         $(this)[0].textContent = $.trim(restText);
+
+         text = $(this).html();
+         word = text;
+         channels.push($.trim(word));
       });
 
       // Save parsed data as object

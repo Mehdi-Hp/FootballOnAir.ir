@@ -1,7 +1,26 @@
+// Spaces
 $general-padding: 1rem;
 
+// Visual variables
+$text-shadow-to-top--big: 0px -5px 1px rgba(0,0,0,0.2);
+$text-shadow-to-bottom--big: 0px 5px 1px rgba(0,0,0,0.2);
+$text-shadow-to-top--small: 0px -2px 1px rgba(0,0,0,0.2);
+$text-shadow-to-bottom--small: 0px 2px 1px rgba(0,0,0,0.2);
+$box-shadow-to-top--big: 0px -5px 1px 0px rgba(0,0,0,0.2);
+$box-shadow-to-bottom--big: 0px 5px 1px 0px rgba(0,0,0,0.2);
+$box-shadow-to-top--small: 0px -2px 1px 0px rgba(0,0,0,0.2);
+$box-shadow-to-bottom--small: 0px 2px 1px 0px rgba(0,0,0,0.2);
 
+// Colors
 $black: hsl(0, 0%, 15%);
 $black-dark-1: darken($black, 10%);
 $black-light-1: lighten($black, 10%);
 $black-light-2: lighten($black, 20%);
+
+$three-color: #FFAC33;
+$varzesh-color: #FEB508;
+
+
+// Components
+$channels-image-box-shadow: $box-shadow-to-top--big;
+$channels-text-box-shadow: $text-shadow-to-top--big;

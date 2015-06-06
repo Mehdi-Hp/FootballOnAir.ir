@@ -8,6 +8,9 @@
 		text-align: center;
 		color: rgb(239, 202, 176);
 		line-height: 1.5;
+		@media screen and (-webkit-min-device-pixel-ratio:0) {
+			letter-spacing: -3px;
+		}
 	}
 }
 .game {
