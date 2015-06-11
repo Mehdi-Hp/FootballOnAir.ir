@@ -12,6 +12,7 @@
 		color: rgb(239, 202, 176);
 		line-height: 1.5;
 		mix-blend-mode: overlay;
+		@media screen and (-webkit-min-device-pixel-ratio:0) {
 			letter-spacing: -3px;
 		}
 	}
