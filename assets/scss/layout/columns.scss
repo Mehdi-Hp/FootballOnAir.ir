@@ -5,12 +5,23 @@ main {
 	background-position: 50%;
 	background-size: cover;
 	background-repeat: no-repeat;
+	min-height: 100%;
+	@media screen and (max-width: 36.25em) {
+		flex-direction: column;
+	}
 }
 .channel {
 	width: 50%;
 	min-height: 100%;
+	@media screen and (max-width: 36.25em) {
+		width: 100%;
+	}
 	&:first-child {
 		border-left: 3px dashed rgba(255, 255, 255, 0.19);
+		@media screen and (max-width: 36.25em) {
+			border-left: none;
+			border-bottom: 3px dashed rgba(255, 255, 255, 0.19);
+		}
 	}
 	&__logo {
 		height: 90px;
@@ -32,8 +43,15 @@ main {
 		margin-right: 1rem;
 		color: rgb(255, 255, 255);
 		text-shadow: $channels-text-box-shadow;
+		flex-grow: 1;
 		@media screen and (-webkit-min-device-pixel-ratio:0) {
 			letter-spacing: -3px;
+		}
+		@media screen and (max-width: 62.5em) {
+			font-size: 23px;
+		}
+		@media screen and (max-width: 36.25em) {
+			font-size: 40px;
 		}
 	}
 }

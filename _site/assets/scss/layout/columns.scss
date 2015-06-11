@@ -1,0 +1,39 @@
+main {
+	display: flex;
+	color: #FFFFFF;
+	background-image: url("../images/soccer-stadium-.jpg");
+	background-position: 50%;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.channel {
+	width: 50%;
+	min-height: 100%;
+	&:first-child {
+		border-left: 3px dashed rgba(255, 255, 255, 0.19);
+	}
+	&__logo {
+		height: 90px;
+		padding: $general-padding 2rem;
+		display: flex;
+		background: rgba(0, 0, 0, 0.1);
+	}
+	&__img {
+		height: 100%;
+		padding: $general-padding/2;
+		background: #fff;
+		border-radius: 30%;
+		box-shadow: $channels-image-box-shadow;
+	}
+	&__name {
+		font-size: 40px;
+		display: flex;
+		align-items: center;
+		margin-right: 1rem;
+		color: rgb(255, 255, 255);
+		text-shadow: $channels-text-box-shadow;
+		@media screen and (-webkit-min-device-pixel-ratio:0) {
+			letter-spacing: -3px;
+		}
+	}
+}

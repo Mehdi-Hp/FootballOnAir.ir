@@ -38,7 +38,7 @@ var gameManipulate = function() {
    // Remove unused games
       $.each(games, function (key, value) {
          var text = $(this).html();
-         if (text.indexOf('هندبال') !== -1 || text.indexOf('بسکتبال') !== -1 || text.indexOf('والیبال') !== -1 || text.indexOf('واليبال ') !== -1 || text.indexOf('واترپولو ') !== -1 || text.indexOf('کشتی') !== -1) {
+         if (text.indexOf('هندبال') !== -1 || text.indexOf('بسکتبال') !== -1 || text.indexOf('والیبال') !== -1 || text.indexOf('واليبال ') !== -1 || text.indexOf('واترپولو ') !== -1 || text.indexOf('ساحلي') !== -1 || text.indexOf('کشتی') !== -1) {
             $(this).remove();
          }
       });
@@ -137,10 +137,8 @@ var gameManipulate = function() {
          text = $(this).html();
          word = text.slice(0, text.indexOf("-"));
          homes.push($.trim(word));
+         $(this)[0].textContent = text.slice(text.indexOf('-'));
 
-         text = $(this).html();
-         restText = text.substr(text.indexOf(" "));
-         $(this)[0].textContent = $.trim(restText);
          text = $(this).html();
          restText = text.substr(text.indexOf(" "));
          $(this)[0].textContent = $.trim(restText);
@@ -183,14 +181,15 @@ var gameManipulate = function() {
 
 var showGames = function() {
    //Get week day
-   var days = ['یکشنبه','دوشنبه','سه شنبه','چهارشنبه','پنجشنبه','جمعه','شنبه'];
+   var days = ['يکشنبه','دوشنبه','سه شنبه','چهارشنبه','پنجشنبه','جمعه','شنبه'];
    var now = new Date();
    var dayOfWeek = days[now.getDay()];
+   console.dir(dayOfWeek);
 
-   // Function for unavailable logos
-   var defaultLogo = function () {
-      this.src = "assets/images/default.png";
-   }
+   // // Function for unavailable logos
+   // var defaultLogo = function () {
+   //    this.src = "assets/images/default.png";
+   // }
 
    // Define values for showGames
    var homeLogos = [];
@@ -209,7 +208,7 @@ var showGames = function() {
                </section>\
                <section class="game__info">\
                      <section class="team">\
-                           <div class="team__logo">\
+                           <div class="team__logo--home">\
                                  <img class="team__img" src="assets/images/' + gamesParsed.homes[i] + '.png">\
                            </div>\
                            <span class="team__name">' + gamesParsed.homes[i] + '</span>\
@@ -218,13 +217,13 @@ var showGames = function() {
                            <img class="game__vs-image" src="assets/images/vs.png"></img>\
                      </section>\
                      <section class="team">\
-                           <div class="team__logo">\
+                           <div class="team__logo--away">\
                                  <img class="team__img" src="assets/images/' + gamesParsed.aways[i] + '.png" onError="defaultLogo()">\
                            </div>\
                            <span class="team__name">' + gamesParsed.aways[i] + '</span>\
                   </section>\
             </section>';
-
+console.dir(gamesParsed.days[i]);
          // Check if the game's day is today
          if (gamesParsed.days[i] === dayOfWeek) {
             gameDOM += '<div class="game__today">امروز</div>'

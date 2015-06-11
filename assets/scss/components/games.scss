@@ -2,6 +2,9 @@
 	display: flex;
 	flex-direction: column;
 	padding: $general-padding;
+	@media screen and (max-width: 62.5em) {
+		flex-direction: column;
+	}
 	&__no-game {
 		font-size: 3rem;
 		margin-top: 5rem;
@@ -26,6 +29,11 @@
 	color: #fff;
 	justify-content: center;
 	text-shadow: $text-shadow-to-bottom--small;
+	@media screen and (max-width: 62.5em) {
+		margin: 0 0.25rem;
+		align-items: center;
+		flex-grow: 1;
+	}
 }
 
 .game {
@@ -35,6 +43,10 @@
 	position: relative;
 	background-color: rgba(255, 255, 255, 0.1);
 	box-shadow: $box-shadow-to-bottom--small;
+	@media screen and (max-width: 62.5em) {
+		padding: $general-padding;
+		flex-direction: column;
+	}
 	&__details {
 		display: flex;
 		flex-direction: column;
@@ -45,6 +57,17 @@
 		line-height: 1.5;
 		text-align: center;
 		margin-left: 1rem;
+		@media screen and (max-width: 36.25em) {
+			flex-wrap: wrap;
+		}
+		@media screen and (max-width: 62.5em) {
+			flex-direction: row;
+			justify-content: space-around;
+			width: 100%;
+			margin-left: 0;
+			order: 2;
+			margin-top: $general-padding*2;
+		}
 	}
 	&__day {
 		@extend %game__details__p;
@@ -62,14 +85,18 @@
 	&__info {
 		display: flex;
 		flex-grow: 1;
-		justify-content: center;
+		justify-content: space-around;
 		margin: 0;
+		@media screen and (max-width: 62.5em) {
+			order: 1;
+		}
 	}
 	&__vs {
 		align-items: center;
 		display: flex;
 		width: 60px;
 		margin: 0 1rem;
+		display: none;
 	}
 	&__vs-image {
 		width: 100%;
@@ -96,19 +123,32 @@
 	}
 }
 
+%team__logo {
+	flex-grow: 1;
+	position: relative;
+	width: 130px;
+	height: 130px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	@media screen and (max-width: 46em) {
+		width: 100px;
+		height: 100px;
+	}
+}
+
 .team {
 	display: flex;
 	flex-direction: column;
 	text-align: center;
-	&__logo {
-		flex-grow: 1;
-		position: relative;
-		width: 130px;
-		height: 130px;
-		max-height: 150px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+	perspective: 300px;
+	&__logo--home {
+		@extend %team__logo;
+		transform: rotateY(-25deg);
+	}
+	&__logo--away {
+		@extend %team__logo;
+		transform: rotateY(25deg);
 	}
 	&__img {
 		max-width: 100%;

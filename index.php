@@ -10,14 +10,14 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>فوتبال روی آنتن - جدول پخش زنده مسابقات فوتبال</title>
-		<meta name="description" content="جدول پخش زنده فوتبال">
+		<meta name="description" content="جدول پخش زنده فوتبال از شبکه‌های ۳ و ورزش">
 		<meta name="keywords" content="پخش زنده,جدول پخش,فوتبال,شبکه ۳,شبکه ورزش,مسابقات فوتبال,ساعت پخش زنده فوتبال,">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="assets/css/main.css" rel="stylesheet">
 		<link href="assets/css/css-reset.css" rel="stylesheet">
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/persianumber.min.js"></script>
 		<script src="assets/js/game-manipulate.js"></script>
-
 	</head>
 	<body>
 		<span id="data-holder">
