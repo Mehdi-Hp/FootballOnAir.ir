@@ -200,7 +200,7 @@ var showGames = function() {
       //Loop through each game
       for (var i = 0; i <= games.length - 1; i++) {
          gameDOM = '\
-            <article class="game" id="game">\
+            <section class="game" id="game">\
                <section class="game__details">\
                      <p class="game__day">' + gamesParsed.days[i] + '<br>' + gamesParsed.dates[i] + '</p>\
                      <p class="game__time">' + gamesParsed.times[i] + '</p>\
@@ -222,7 +222,7 @@ var showGames = function() {
                            </div>\
                            <span class="team__name">' + gamesParsed.aways[i] + '</span>\
                   </section>\
-            </article>';
+            </section>';
 
          // Check if the game's day is today
          if (gamesParsed.days[i] === dayOfWeek) {
