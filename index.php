@@ -34,8 +34,7 @@
 
 		<script>
 			$("#data-holder").persiaNumber();
-
-			gameManipulate()
+			gameManipulate();
 		</script>
 
 		<main class="main">

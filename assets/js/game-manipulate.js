@@ -181,7 +181,7 @@ var gameManipulate = function() {
 
 var showGames = function() {
    //Get week day
-   var days = ['يکشنبه','دوشنبه','سه شنبه','چهارشنبه','پنجشنبه','جمعه','شنبه'];
+   var days = ['يک‌شنبه','دوشنبه','سه‌شنبه','چهارشنبه','پنج‌شنبه','جمعه','شنبه'];
    var now = new Date();
    var dayOfWeek = days[now.getDay()];
    console.dir(dayOfWeek);
@@ -200,7 +200,7 @@ var showGames = function() {
       //Loop through each game
       for (var i = 0; i <= games.length - 1; i++) {
          gameDOM = '\
-            <section class="game" id="game">\
+            <article class="game" id="game">\
                <section class="game__details">\
                      <p class="game__day">' + gamesParsed.days[i] + '<br>' + gamesParsed.dates[i] + '</p>\
                      <p class="game__time">' + gamesParsed.times[i] + '</p>\
@@ -222,8 +222,8 @@ var showGames = function() {
                            </div>\
                            <span class="team__name">' + gamesParsed.aways[i] + '</span>\
                   </section>\
-            </section>';
-console.dir(gamesParsed.days[i]);
+            </article>';
+
          // Check if the game's day is today
          if (gamesParsed.days[i] === dayOfWeek) {
             gameDOM += '<div class="game__today">امروز</div>'
