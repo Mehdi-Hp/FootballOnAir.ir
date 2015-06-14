@@ -1,3 +1,5 @@
+@import "../animations/games-anim";
+
 .games {
 	display: flex;
 	flex-direction: column;
@@ -19,6 +21,7 @@
 }
 
 %game__details__p {
+	will-change: opacity, transform;
 	padding: 0.26rem;
 	font-size: 1.2rem;
 	box-shadow: $box-shadow-to-bottom--small;
@@ -29,6 +32,8 @@
 	color: #fff;
 	justify-content: center;
 	text-shadow: $text-shadow-to-bottom--small;
+	transform: translateY(30px);
+	opacity: 0;
 	@media screen and (max-width: 62.5em) {
 		margin: 0 0.25rem;
 		align-items: center;
@@ -37,12 +42,15 @@
 }
 
 .game {
+	will-change: opacity, transform;
 	display: flex;
 	padding: $general-padding*2 $general-padding;
 	margin-bottom: 1rem;
 	position: relative;
 	background-color: rgba(255, 255, 255, 0.1);
 	box-shadow: $box-shadow-to-bottom--small;
+	transform: translateY(100px);
+	opacity: 0;
 	@media screen and (max-width: 62.5em) {
 		padding: $general-padding;
 		flex-direction: column;
@@ -138,10 +146,13 @@
 }
 
 .team {
+	will-change: opacity, transform;
 	display: flex;
 	flex-direction: column;
 	text-align: center;
-	perspective: 300px;
+	perspective: 200px;
+	opacity: 0;
+	transform: scale(0.7);
 	&__logo--home {
 		@extend %team__logo;
 		transform: rotateY(-25deg);

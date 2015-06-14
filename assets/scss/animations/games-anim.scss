@@ -1,0 +1,57 @@
+@keyframes game {
+   0% {
+      opacity: 0;
+      transform: translateY(100px);
+   }
+   100% {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+@keyframes team {
+   0% {
+      opacity: 0;
+      transform: scale(0.7);
+   }
+   100% {
+      opacity: 1;
+      transform: scale(1);
+   }
+}
+
+@keyframes game__details {
+   0% {
+      opacity: 0;
+      transform: translateY(30px);
+   }
+   100% {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+@for $i from 1 through 10 {
+   $time: #{($i / 4) + 1s};
+   .game:nth-of-type(#{$i}) {
+      animation: game 0.5s $time forwards;
+   }
+}
+
+@for $i from 1 through 10 {
+   $time: #{($i / 4) + 1.25s};
+   @for $j from 1 through 3 {
+      .game:nth-of-type(#{$i}) .team:nth-of-type(#{$j}) {
+         animation: team 0.5s $time forwards;
+      }
+   }
+}
+
+@for $i from 1 through 10 {
+   @for $j from 1 through 3 {
+      $time: #{($i / 4) + 1.5s + ($j / 4)};
+      .game:nth-of-type(#{$i}) > .game__details > p:nth-child(#{$j}) {
+         animation: game__details 0.5s $time forwards;
+      }
+   }
+}
